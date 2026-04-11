@@ -14,7 +14,7 @@ public class ItemBehavior : MonoBehaviour
         if (collision.gameObject.name == "Pig")
         {
            Destroy(this.transform.parent.gameObject);
-           Debug.Log("Item collected!");
+           Debug.Log("Item collected!!!");
            GameManager.Items += 1;
         }
     }

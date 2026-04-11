@@ -11,13 +11,11 @@ public class ItemBehavior : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.name == "Player")
+        if (collision.gameObject.name == "Pig")
         {
            Destroy(this.transform.parent.gameObject);
            Debug.Log("Item collected!");
            GameManager.Items += 1;
-
-           GameManager.PrintLootReport();
         }
     }
 

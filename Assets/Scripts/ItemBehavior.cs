@@ -1,27 +1,25 @@
-using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-public class ItemBehavior : MonoBehaviour
+using UnityEngine;
+
+public class ItemBehavior : MonoBehaviour 
 {
     public GameBehavior GameManager;
-  
+
     void Start()
     {
-        GameManager = GameObject.Find("GameManager").GetComponent<GameBehavior>();
+          GameManager = GameObject.Find("Game Manager").GetComponent<GameBehavior>();
     }
+
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.name == "Pig")
         {
-           Destroy(this.transform.parent.gameObject);
-           Debug.Log("Item collected!!!");
-           GameManager.Items += 1;
+            Destroy(this.gameObject);
+            Debug.Log("Item collected!");
+
+            GameManager.Items += 1;
+            GameManager.PrintLootReport();
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-}
+} 
